@@ -109,11 +109,19 @@ mk %>%
 
 
 # --------------------------- Histogram
+head(demo)
+
+demo%>%
+  group_by(gender)%>%
+  summarise(n())
+
+demo %>%
+  filter(carpr<50)%>%
+  ggplot(aes(x=income, fill=gender))+
+  geom_histogram()
 
 
-
-
-
+# ---------------------------- Boxplot
 
 
 
