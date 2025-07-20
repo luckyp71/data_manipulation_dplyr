@@ -122,8 +122,17 @@ demo %>%
 
 
 # ---------------------------- Boxplot
+v <- demo%>%
+  ggplot(aes(x=gender, y=income))+
+  geom_boxplot(aes(color=gender))+
+  labs(
+    x='Gender',
+    y='Income',
+    title='Income by Gender'
+  )+
+  theme_minimal()
 
-
+ggplotly(v, tooltip = c('x', 'y'))
 
 
 
